@@ -1,12 +1,12 @@
 "use strict";
-
-///////////////////////////////////////
-// Modal window
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
 
+/* -------------------- Modal window -------------------- */
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove("hidden");
@@ -29,9 +29,21 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-///////////////////////////////////////////////////////////////////////////
+/* ------------- 'Learn more' btn scrolling ------------- */
+btnScrollTo.addEventListener("click", function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+  console.log(e.target.getBoundingClientRect());
+  console.log("Current scroll (X/Y)", window.pageXOffset, window.pageYOffset);
+  console.log(
+    "height/width viewport",
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+  section1.scrollIntoView({ behavior: "smooth" });
+});
 
-//Cookie message
+/* ------------------- Cookie message ------------------- */
 const header = document.querySelector(".header");
 const message = document.createElement("div");
 message.classList.add("cookie-message");
@@ -40,23 +52,24 @@ message.innerHTML =
 
 header.append(message);
 
-//Close cookie message element
+/* ------------ Close cookie message element ------------ */
 document
   .querySelector(".btn--close-cookie")
   .addEventListener("click", function () {
     message.remove();
   });
 
-//Style
+/* ------------------------ Style ----------------------- */
 message.style.backgroundColor = "#37383d";
 message.style.width = "120%";
 message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + "px";
 
-//'Learn more' btn scrolling
-const btnScrollTo = document.querySelector(".btn--scroll-to");
-const section1 = document.querySelector("#section--1");
-
-btnScrollTo.addEventListener("click", function (e) {
-  section1.scrollIntoView({ behavior: "smooth" });
+/* ------------------- Page Navigation ------------------ */
+document.querySelector(".nav__links").addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  }
 });
