@@ -9,6 +9,8 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 const nav = document.querySelector('.nav');
+const initialCoords = section1.getBoundingClientRect();
+const header = document.querySelector('.header');
 
 /* -------------------- Modal window -------------------- */
 const openModal = function (e) {
@@ -48,7 +50,6 @@ btnScrollTo.addEventListener('click', function (e) {
 });
 
 /* ------------------- Cookie message ------------------- */
-const header = document.querySelector('.header');
 const message = document.createElement('div');
 message.classList.add('cookie-message');
 message.innerHTML =
@@ -111,3 +112,17 @@ const handleHover = function (e) {
 };
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
+
+/* ---------- Implementing The Sticky Navigation ---------- */
+const navHeight = nav.getBoundingClientRect().height;
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+headerObserver.observe(header);
