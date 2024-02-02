@@ -166,3 +166,41 @@ const imgObserver = new IntersectionObserver(loadImg, {
   rootMargin: '200px',
 });
 imgTargets.forEach(img => imgObserver.observe(img));
+
+/* --------- Building a Slider Component: Part 1 -------- */
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const rigthBtn = document.querySelector('.slider__btn--right');
+const leftBtn = document.querySelector('.slider__btn--left');
+let curSlide = 0;
+const maxSlide = slides.length;
+
+const goToSlide = function (slide) {
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${(i - slide) * 100}%)`)
+  );
+};
+goToSlide(0);
+
+//Next Slide
+const nextSlide = function () {
+  if (curSlide === maxSlide - 1) {
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
+  goToSlide(curSlide);
+};
+
+//Previous Slide
+const prevSlide = function () {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1;
+  } else {
+    curSlide--;
+  }
+  goToSlide(curSlide);
+};
+//Listeners
+rigthBtn.addEventListener('click', nextSlide);
+leftBtn.addEventListener('click', prevSlide);
