@@ -1,1 +1,1 @@
-|![Bankist](https://github.com/asyylz/Bankist/blob/2b01704fec3cfb4d508bee65f7952920a151f9a8/bankist.gif)|
+|![Bankist](https://github.com/asyylz/Bankist/blob/aff2a4023ea9eb9bfc47fd81f26aeb25c2519852/bankist.gif)|
