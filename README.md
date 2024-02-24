@@ -1,4 +1,3 @@
-# README
 # Interactive Web App with Vanilla JavaScript
 This repository contains the source code for an interactive web app built using Vanilla JavaScript. The app includes various features such as modal windows, scrolling functionality, tabbed components, menu animations, sticky navigation, revealing elements on scroll, lazy loading images, and a slider component.
 # Outcome
