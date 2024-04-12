@@ -1,9 +1,13 @@
 # Interactive Web App with Vanilla JavaScript
+
 This repository contains the source code for an interactive web app built using Vanilla JavaScript. The app includes various features such as modal windows, scrolling functionality, tabbed components, menu animations, sticky navigation, revealing elements on scroll, lazy loading images, and a slider component.
+
 # Outcome
+
 |![Bankist](https://github.com/asyylz/Bankist/blob/aff2a4023ea9eb9bfc47fd81f26aeb25c2519852/bankist.gif)|
 
 # Features
+
 **Modal Windows:** Users can open and close modal windows.
 
 **Scrolling Functionality:** The app provides smooth scrolling to different sections.
@@ -25,6 +29,7 @@ This repository contains the source code for an interactive web app built using 
 **Slider Component:** A slider component allows users to navigate through slides.
 
 # Project Structure
+
 **index.html:** The main HTML file containing the structure of the web app.
 
 **styles.css:** The stylesheet file for styling the app.
@@ -32,6 +37,7 @@ This repository contains the source code for an interactive web app built using 
 **script.js:** The JavaScript file containing the functionality and logic for the app.
 
 ## Bankist Project Skeleton
+
 ```ruby
 |
 |----img
@@ -43,11 +49,20 @@ This repository contains the source code for an interactive web app built using 
 |----bankist.gif
 |----LICENCE
 ```
+
 # Usage
+
 To run the app locally, simply open the index.html file in a web browser.
 
 # Contributions
+
 Contributions to this project are welcome! If you have any suggestions for improvements or new features, feel free to submit a pull request.
 
 # License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+# Credits
+
+This project was created as part of an educational course on Udemy and is intended for learning purposes only.
+All credit for the project idea and implementation goes to the course instructors and authors.
